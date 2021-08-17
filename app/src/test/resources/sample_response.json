@@ -1,0 +1,30 @@
+[
+  {
+    "StoreNo": 219,
+    "StoreName": "Pilot Travel Center",
+    "City": "Haughton",
+    "State": "LA",
+    "Address": "490 North Elm Street",
+    "AddressTwo": null,
+    "ZipCode": "71037",
+    "Country": "US",
+    "Interstate": "I-20 & Hwy 157  Exit 33",
+    "StoreFrontBrand": null,
+    "Phone": "(318) 390-9709",
+    "Area": null,
+    "StoreType": null,
+    "Latitude": 35.99996,
+    "Longitude": -83.777618,
+    "SpaceAvailability": [
+      {
+        "LocationID": 219,
+        "ItemID": 1,
+        "Description": "Truck",
+        "Total": 5,
+        "Booked": 0,
+        "Available": 4,
+        "Price": 12
+      }
+    ]
+  }
+]

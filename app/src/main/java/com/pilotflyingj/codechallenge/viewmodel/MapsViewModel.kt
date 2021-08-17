@@ -1,11 +1,24 @@
 package com.pilotflyingj.codechallenge.viewmodel
 
 import androidx.hilt.lifecycle.ViewModelInject
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.pilotflyingj.codechallenge.repository.MapRepository
+import com.pilotflyingj.codechallenge.repository.models.Site
+import kotlinx.coroutines.launch
 
 class MapsViewModel @ViewModelInject constructor(
-
+    private val mapRepository: MapRepository
 ) : ViewModel() {
-    // TODO call the repository's method to get location list. Dont export the API model to the view
-    // instead, use the model provided for the repo layer.
+
+    private val _locations = MutableLiveData<List<Site>>()
+    val locations: LiveData<List<Site>> = _locations
+
+    init {
+        viewModelScope.launch {
+            _locations.value = mapRepository.getLocations()
+        }
+    }
 }
